@@ -18,7 +18,7 @@ import java.util.UUID;
 @TableName("T_FW_USER")
 public class User  {
 
-    @TableId(value = "ID", type = IdType.INPUT)
+    @TableId(value = "id", type = IdType.INPUT)
     protected String id = UUID.randomUUID().toString().replaceAll("-", "");
     /**
      * 用户LOGIN账号

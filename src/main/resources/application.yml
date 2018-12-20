@@ -1,0 +1,60 @@
+spring:
+  datasource:
+    dynamic:
+      p6spy: true
+      druid:
+        initial-size: 5
+        max-active: 20
+        min-idle: 5
+        max-wait: 60000
+        time-between-eviction-runs-millis: 60000
+        time-between-log-stats-millis:
+        stat-sqlmax-size:
+        min-evictable-idle-time-millis: 300000
+        max-evictable-idle-time-millis:
+        test-while-idle: true
+        test-on-borrow: false
+        test-on-return: false
+        validation-query: SELECT 1 FROM DUAL
+        validation-query-timeout:
+        use-global-datasource-stat:
+        async-init:
+        clear-filters-enable:
+        reset-stat-enable:
+        not-full-timeout-retry-count:
+        max-wait-thread-count:
+        fail-fast:
+        phyTimeout-millis:
+        keep-alive:
+        pool-prepared-statements: true
+        init-variants:
+        init-global-variants:
+        use-unfair-lock:
+        kill-when-socket-read-timeout:
+        connection-properties:
+        max-pool-prepared-statement-per-connection-size: 20
+        init-connection-sqls:
+        share-prepared-statements:
+        connection-errorretry-attempts:
+        break-after-acquire-failure:
+        filters: stat,wall # 注意这个值和druid原生不一致，默认启动了stat,wall
+      #primary: master #设置默认的数据源或者数据源组,默认值即为master
+      datasource:
+        master:
+          username: root
+          password: admin,.
+          url: jdbc:mysql://148.70.20.163:3306/framework?useUnicode=true&characterEncoding=utf-8&useSSL=false
+          driver-class-name: com.mysql.jdbc.Driver
+#          druid: #这里可以重写默认值
+#            initial-size: 5
+        slave_1:
+          username: WHSY_FW
+          password: WHSY_FW
+          url: jdbc:oracle:thin:@112.74.18.160:1521:orcl
+          driver-class-name: oracle.jdbc.driver.OracleDriver
+
+#设置thymleaf非严格验证
+  thymeleaf:
+    mode: LEGACYHTML5
+    content: text/html
+    cache: false
