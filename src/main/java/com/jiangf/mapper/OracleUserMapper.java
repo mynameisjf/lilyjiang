@@ -8,7 +8,7 @@ import com.jiangf.model.OracleUser;
 /**
  * Created by JIANGF on 2018/12/14.
  */
-@DS("slave_1")
+@DS("oracle")
 public interface OracleUserMapper extends BaseMapper<OracleUser> {
 
 }

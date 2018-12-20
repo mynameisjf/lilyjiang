@@ -47,11 +47,11 @@ public class UserMapperTest extends TestCase {
         ou.setResActMapId("111");
         ou.setValidSign(0);
 
-        oracleUserMapper.insert(ou);
+//        oracleUserMapper.insert(ou);
 
         // 插入主库1
         User u = new User();
-        u.setId("1");
+        u.setId("2");
         u.setUserAcct("ceshi");
         u.setUserAcctCn("ceshi");
 
